@@ -2,6 +2,9 @@
 	<html>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<head>
+	
+
+
 	  <!-- Basic -->
 	  <meta charset="utf-8" />
 	  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -14,7 +17,7 @@
 
 	  <title>Oikkyo</title>
 
-
+		
 
 
 	  <!-- bootstrap core css -->
@@ -38,6 +41,8 @@
 	  <script type="text/javascript" src="js/bootstrap.min.js"></script>
 	  <!--script type="text/javascript" src="js/jquery-3.4.1.min.js"></script-->
 	  
+	  
+	  
 	  <script type="text/javascript">
         function zoom() {
             document.body.style.zoom = "100%" 
@@ -59,7 +64,7 @@
 	  
 	  
 
-
+	
 	
 
 	  <link rel="stylesheet" href="css/css-circular-prog-bar.css">
@@ -68,9 +73,17 @@
 	</head>
 
 
+	<div class="splash">
+	  <img src="hmmjustlogo_png.png" alt="Splash Screen">
+	</div>
 
-
-
+	<script>
+	  window.onload = function() {
+		setTimeout(function() {
+		  document.querySelector('.splash').style.display = 'none';
+		}, 1250); // Set the duration in milliseconds
+	  };
+	</script>
 	<body>
 	  <div class="top_container">
 		<!-- header section strats -->
