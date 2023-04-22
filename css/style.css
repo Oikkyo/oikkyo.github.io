@@ -20,9 +20,16 @@ body {
   opacity: 0;
 }
 
+.member_container {
+  margin: 50px;	 
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
 .member {
-	width: 300px;
-	margin: 20px;
+	width: 250px;
+	margin: 50px;
 	background-color: #eee;
 	padding: 20px;
 	text-align: center;
