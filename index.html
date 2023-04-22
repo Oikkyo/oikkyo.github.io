@@ -1,6 +1,8 @@
 	<!DOCTYPE html>
 	<html>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
 	<head>
 	
 
@@ -17,7 +19,7 @@
 
 	  <title>Oikkyo</title>
 
-		
+
 
 
 	  <!-- bootstrap core css -->
@@ -48,6 +50,7 @@
             document.body.style.zoom = "100%" 
         }
 	  </script>
+
 	  <body onload="zoom()">
 	  <script type="text/javascript">
 		  var prevScrollpos = window.pageYOffset;
@@ -73,18 +76,36 @@
 	</head>
 
 
-	<div class="splash">
-	  <img src="hmmjustlogo_png.png" alt="Splash Screen">
-	</div>
-
-	<script>
-	  window.onload = function() {
-		setTimeout(function() {
-		  document.querySelector('.splash').classList.add('hide');
-		}, 300); // Set the duration in milliseconds
-	  };
-	</script>
 	<body>
+	
+		<div class="splash">
+		  <video autoplay muted loop id="video-background">
+			<source src="logopop_black.mp4" type="video/mp4">
+		  </video>
+		  <!-- <img src="hmmjustlogo_png.png"  alt="Splash Screen"> -->
+		</div>
+		<script type="text/javascript">
+		  window.onload = function() {
+		  if (!localStorage.getItem("splash-screen-viewed")) {
+			  document.querySelector('.splash').style.display = "block";
+			  document.querySelector('.splash').classList.add('hide');
+			  localStorage.setItem("splash-screen-viewed", true);
+			  setTimeout(function() {
+					document.querySelector('.splash').parentNode.removeChild(document.querySelector('.splash'))
+				  <!-- document.querySelector('.splash').style.display = 'none'; -->
+				}, 1000); // Set the duration in milliseconds
+		  };
+		  if (localStorage.getItem('splash-screen-viewed')) {
+		  setTimeout(function() {
+					document.querySelector('.splash').style.display = 'none';
+				  <!-- document.querySelector('.splash').style.display = 'none'; -->
+				}, 0); // Set the duration in milliseconds
+		  document.querySelector('.splash').parentNode.removeChild(document.querySelector('.splash'))
+		 };
+		}; 
+		</script>
+	
+
 	  <div class="top_container">
 		<!-- header section strats -->
 		<header class="header_section">
@@ -134,9 +155,6 @@
 		</header>
 		
 		<section class="hero_section position-relative">
-		  
-		  
-		  
 		  <div class="hero_section-container " style="padding-top:5em">
 
 			<div class="hero_img-box">
@@ -317,7 +335,7 @@
 			
 		  </div>
 			<div class="d-flex justify-content-center justify-content-sm-start">
-				<a href="office.html" class="sub_call_to-btn ">
+				<a href="members.html" class="sub_call_to-btn ">
 				  <span>
 					Know More about us
 				  </span>

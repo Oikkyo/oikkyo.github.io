@@ -72,6 +72,34 @@
 
 
 	<body>
+		<div class="splash">
+		  <video autoplay muted loop id="video-background">
+			<source src="logopop_black.mp4" type="video/mp4">
+		  </video>
+		  <!-- <img src="hmmjustlogo_png.png"  alt="Splash Screen"> -->
+		</div>
+		
+		<script type="text/javascript">
+		  window.onload = function() {
+		  if (!localStorage.getItem("splash-screen-viewed")) {
+			  document.querySelector('.splash').style.display = "block";
+			  document.querySelector('.splash').classList.add('hide');
+			  localStorage.setItem("splash-screen-viewed", true);
+			  setTimeout(function() {
+					document.querySelector('.splash').parentNode.removeChild(document.querySelector('.splash'))
+				  <!-- document.querySelector('.splash').style.display = 'none'; -->
+				}, 1000); // Set the duration in milliseconds
+		  };
+		  if (localStorage.getItem('splash-screen-viewed')) {
+		  setTimeout(function() {
+					document.querySelector('.splash').style.display = 'none';
+				  <!-- document.querySelector('.splash').style.display = 'none'; -->
+				}, 0); // Set the duration in milliseconds
+		  document.querySelector('.splash').parentNode.removeChild(document.querySelector('.splash'))
+		 };
+		}; 
+		</script>
+		
 	  <div class="top_container">
 		<!-- header section strats -->
 		<header class="header_section">
@@ -311,7 +339,7 @@
 			</p>
 		  </div>
 			<div class="d-flex justify-content-center justify-content-sm-start">
-				<a href="office.html" class="sub_call_to-btn ">
+				<a href="members.html" class="sub_call_to-btn ">
 				  <span>
 					Know More
 				  </span>
@@ -341,7 +369,7 @@
 		  <div>
 			<div class="info_social">
 			  <div>
-			   <a href="mailto:neelabjaroy95@gmail.com">
+			   <a href="mailto:neelabja.oikkyo@gmail.com">
 				  <img src="images/email12.png" width="38" alt="">
 			   </a>
 			  </div>
@@ -356,7 +384,7 @@
 			   </a>
 			  </div>
 			  <div>
-				<a href="https://www.instagram.com/nee.lab.joe/">
+				<a href="https://www.instagram.com/oikkyoai/">
 					<img src="images/insta.png" alt="">
 				</a>
 			  </div>
