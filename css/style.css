@@ -19,8 +19,17 @@ body {
 
 @media (max-width: 600px) {
   .splash {
-    width: 20%;
-    height: 20%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 80%;
+  height: 80%;
+  background-color: rgba(0, 0, 0, .9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.3s ease-in-out;
   }
 }
 
